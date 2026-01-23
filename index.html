@@ -1,14 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name | Venta de coches</title>
+    <meta name="description" content="Venta de coches de alta calidad con garantía">
+    <title>AutoShop | Venta de coches premium</title>
     <link rel="stylesheet" href="./assets/styles/layout.css">
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
 </head>
 <body>
-    <h1>Título de prueba</h1>
-    <p>Aquí va una descripción detallada de la página sobre venta de coches...</p>
+    <!-- TODO: Cambiar el logo-->
+    <header class="header">
+        <nav class="navbar">
+            <h1 class="logo">AutoShop</h1>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- NOTA: Aquí va la sección hero, alguien debería agregar una imagen de fondo to guapa -->
+        <section id="inicio" class="hero">
+            <h1 class="hero-title">Bienvenido a AutoShop</h1>
+            <p class="hero-subtitle">Los coches que vendemos son de alta calidad y con garantía.</p>
+            <button class="btn btn-primary">Ver catálogo</button>
+        </section>
+
+        <!-- FIXME: Falta conectar esta sección con la bbdd -->
+        <section id="catalogo" class="catalog">
+            <h2>Catálogo de vehículos</h2>
+            <div class="car-grid">
+                <!-- TODO: Generar tarjetas desde API -->
+                <article class="car-card">
+                    <div class="car-image">IMG PLACEHOLDER</div>
+                    <h3>Tesla Model 3</h3>
+                    <p class="price">$45,000</p>
+                    <p class="description">Eléctrico, totalmente cargado de tech</p>
+                    <button class="btn btn-secondary">Ver detalles</button>
+                </article>
+
+                <article class="car-card">
+                    <div class="car-image">IMG PLACEHOLDER</div>
+                    <h3>BMW Serie 5</h3>
+                    <p class="price">$55,000</p>
+                    <p class="description">Lujo y rendimiento en una sola máquina</p>
+                    <button class="btn btn-secondary">Ver detalles</button>
+                </article>
+
+                <article class="car-card">
+                    <div class="car-image">IMG PLACEHOLDER</div>
+                    <h3>Audi A4</h3>
+                    <p class="price">$48,000</p>
+                    <p class="description">Diseño elegante y confort extremo</p>
+                    <button class="btn btn-secondary">Ver detalles</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- IDEA: Añadir aquí un chat con IA para consultas-->
+        <section id="contacto" class="contact">
+            <h2>¿Tienes dudas?</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu correo" required>
+                <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+                <!-- HACK: El submit debería validarse mejor en JavaScript -->
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- TODO: Agregar footer con redes sociales y links -->
+    <footer class="footer">
+        <p>&copy; 2026 AutoShop. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

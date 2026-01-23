@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
+/* ======================================
+   ESTILOS GENERALES
+   ====================================== */
+
 :root {
     --title-font: 'Ubuntu', sans-serif;
     --text-font: 'TikTok Sans', sans-serif;
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #f9fafb;
+    --border-color: #e5e7eb;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -18,8 +29,306 @@ html {
 
 body {
     font-family: var(--text-font);
+    color: var(--text-dark);
+    background-color: #ffffff;
+    line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--title-font);
+}
+
+/* ======================================
+   HEADER Y NAVEGACIÓN
+   ====================================== */
+
+.header {
+    background-color: #ffffff;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    /* TODO: Cambiar el logo cuando el diseñador envíe los archivos */
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+/* ======================================
+   SECCIÓN HERO
+   ====================================== */
+
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+    /* NOTA: Aquí debería ir una imagen de fondo parallax epica */
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+/* ======================================
+   BOTONES
+   ====================================== */
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* ======================================
+   MAIN CONTENT
+   ====================================== */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ======================================
+   SECCIÓN CATÁLOGO
+   ====================================== */
+
+.catalog {
+    padding: 4rem 2rem;
+}
+
+.catalog h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* TODO: Hacer las tarjetas más interactivas con flip animations */
+.car-card {
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.car-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.car-image {
+    background-color: #e5e7eb;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--text-light);
+    /* FIXME: Subir las imágenes reales de los coches al servidor */
+}
+
+.car-card h3 {
+    padding: 1.5rem 1.5rem 0.5rem;
+    font-size: 1.3rem;
+}
+
+.car-card p {
+    padding: 0 1.5rem;
+    color: var(--text-light);
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    padding-top: 0.5rem;
+}
+
+.description {
+    margin-bottom: 1.5rem;
+}
+
+.car-card .btn {
+    width: calc(100% - 3rem);
+    margin: 0 1.5rem 1.5rem;
+}
+
+/* ======================================
+   SECCIÓN CONTACTO
+   ====================================== */
+
+.contact {
+    background-color: var(--bg-light);
+    padding: 4rem 2rem;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    /* IDEA: Agregar validación visual con JavaScript */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.contact-form button {
+    align-self: center;
+    min-width: 200px;
+}
+
+/* ======================================
+   FOOTER
+   ====================================== */
+
+.footer {
+    background-color: var(--text-dark);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    /* TODO: Agregar redes sociales y links legales en el footer */
+}
+
+/* ======================================
+   RESPONSIVE DESIGN
+   ====================================== */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .catalog h2,
+    .contact h2 {
+        font-size: 1.8rem;
+    }
+
+    .car-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* HACK: Aumentar font-size en inputs para evitar zoom en iOS */
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
 }
